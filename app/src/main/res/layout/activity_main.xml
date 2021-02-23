@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- card score. -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardscoreCounter"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cardBackgroundColor="#E91E63"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/scoreCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/score_counter"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Team -->
+        <TextView
+            android:id="@+id/textTimA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/team_a"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/scoreTeamA"
+            app:layout_constraintStart_toStartOf="@id/scoreTeamA"
+            app:layout_constraintTop_toBottomOf="@+id/cardscoreCounter" />
+        <TextView
+            android:id="@+id/textTimB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/team_b"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/scoreTeamB"
+            app:layout_constraintStart_toStartOf="@+id/scoreTeamB"
+            app:layout_constraintTop_toBottomOf="@+id/cardscoreCounter" />
+
+        <!-- Score live -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/scoreTeamA"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/oranye"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/scoreTeamB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTimA">
+
+            <TextView
+                android:id="@+id/tvScoreCounterA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/_0"
+                android:textColor="@color/white"
+                android:textSize="80sp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/scoreTeamB"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/blue"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/scoreTeamA"
+            app:layout_constraintTop_toBottomOf="@+id/textTimB">
+
+            <TextView
+                android:id="@+id/tvScoreCounterB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/_0"
+                android:textColor="@color/white"
+                android:textSize="80sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card fragment kiri team A -->
+        <!--- Plus -->
+        <Button
+            android:id="@+id/btn_scorePlusTeamA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/oranye"
+            android:text="@string/__1"
+            android:textColor="@color/white"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/scoreTeamA"
+            app:layout_constraintStart_toStartOf="@id/scoreTeamA"
+            app:layout_constraintTop_toBottomOf="@id/scoreTeamA"/>
+        <!--- Minus -->
+        <Button
+            android:id="@+id/btn_scoreMinusTeamA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/oranye"
+            android:text="@string/_1"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/btn_scorePlusTeamA"
+            app:layout_constraintTop_toBottomOf="@+id/btn_scorePlusTeamA"
+            app:layout_constraintEnd_toEndOf="@+id/btn_scorePlusTeamA"/>
+
+        <!--- Card Fragment Kanan Team B -->
+        <!--- Plus -->
+        <Button
+            android:id="@+id/btn_scorePlusTeamB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/__1"
+            android:textColor="@color/white"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/scoreTeamB"
+            app:layout_constraintStart_toStartOf="@id/scoreTeamB"
+            app:layout_constraintTop_toBottomOf="@id/scoreTeamB"/>
+        <!--- Minus -->
+        <Button
+            android:id="@+id/btn_scoreMinusTeamB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/_1"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_scorePlusTeamB"
+            app:layout_constraintStart_toStartOf="@id/btn_scorePlusTeamB"
+            app:layout_constraintTop_toBottomOf="@id/btn_scorePlusTeamB"/>
+
+        <!--- Btn Reset -->
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_reset"
+            android:text="@string/reset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_scoreMinusTeamA"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
